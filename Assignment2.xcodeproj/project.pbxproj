@@ -13,6 +13,7 @@
 		BAAF8E9F2036853000A78D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAAF8E9E2036853000A78D1B /* Assets.xcassets */; };
 		BAAF8EA22036853000A78D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAF8EA02036853000A78D1B /* LaunchScreen.storyboard */; };
 		BAAF8EAA20368CA400A78D1B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF8EA920368CA400A78D1B /* AboutViewController.swift */; };
+		BAAF8EAC20379E8900A78D1B /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF8EAB20379E8900A78D1B /* DeveloperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BAAF8EA12036853000A78D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAAF8EA32036853000A78D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAAF8EA920368CA400A78D1B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		BAAF8EAB20379E8900A78D1B /* DeveloperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				BAAF8E972036853000A78D1B /* AppDelegate.swift */,
 				BAAF8E992036853000A78D1B /* ViewController.swift */,
 				BAAF8E9B2036853000A78D1B /* Main.storyboard */,
+				BAAF8EAB20379E8900A78D1B /* DeveloperViewController.swift */,
 				BAAF8EA920368CA400A78D1B /* AboutViewController.swift */,
 				BAAF8E9E2036853000A78D1B /* Assets.xcassets */,
 				BAAF8EA02036853000A78D1B /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAAF8EAA20368CA400A78D1B /* AboutViewController.swift in Sources */,
+				BAAF8EAC20379E8900A78D1B /* DeveloperViewController.swift in Sources */,
 				BAAF8E9A2036853000A78D1B /* ViewController.swift in Sources */,
 				BAAF8E982036853000A78D1B /* AppDelegate.swift in Sources */,
 			);
