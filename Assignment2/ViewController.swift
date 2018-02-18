@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
-    @IBOutlet weak var sumLabel: UILabel!
     @IBOutlet weak var LeftImage: UIImageView!
     @IBOutlet weak var RightImage: UIImageView!
     @IBOutlet weak var roundBtn: UILabel!
@@ -28,7 +26,7 @@ class ViewController: UIViewController {
     var round:Int = 0
     var sum1:Int = 0
     var sum2:Int = 0
-    var totMoney1:Int = 5
+    var totMoney1:Int = 100
     var totMoney2:Int = 100
     var res:String = ""
     var zero:String = ""
@@ -64,7 +62,6 @@ class ViewController: UIViewController {
         sum2 = diceOne1 + diceTwo1
         result()
         totalMoney()
-            
         }
         else{
             if totMoney1 == 0 {
@@ -86,22 +83,33 @@ class ViewController: UIViewController {
     
     @IBAction func resetBtn(_ sender: UIButton) {
         
+        let alert = UIAlertController(title: "RESET", message: "Are You Sure You Want to Reset the game? All Game data will be lost!" , preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
+            self.reset()}))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert,animated: true,completion: nil)
+        
+    }
+    
+    func reset(){
         round = 0
         roundBtn.text = "Round : \(round)"
-        LeftImage.image = UIImage(named: "Dice1")
-        RightImage.image = UIImage(named: "Dice1")
-        LeftImage1.image = UIImage(named: "Dice1")
-        RightImage1.image = UIImage(named: "Dice1")
+        LeftImage.image = #imageLiteral(resourceName: "blankdice")
+        RightImage.image = #imageLiteral(resourceName: "blankdice")
+        LeftImage1.image = #imageLiteral(resourceName: "blankdice")
+        RightImage1.image = #imageLiteral(resourceName: "blankdice")
         stepper1.value = 0
         stepper2.value = 0
-        bet1.text = "BET :"
-        bet2.text = "BET :"
-        
+        bet1.text = "BET : 0"
+        bet2.text = "BET : 0"
         totMoney1 = 100
         totMoney2 = 100
         mLeft1.text = "MONEY LEFT: \(totMoney1)"
         mLeft2.text = "MONEY LEFT: \(totMoney2)"
     }
+    
     
     
     @IBAction func betInc1(_ sender: UIStepper) {
@@ -118,6 +126,9 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    
+    
     @IBAction func betInc2(_ sender: UIStepper) {
         if (Int(stepper2.value) < totMoney2) {
             bet2.text = "BET : \(Int(stepper2.value))"
@@ -133,6 +144,8 @@ class ViewController: UIViewController {
     }
     
     
+    
+    
     func result(){
         
         if sum1 > sum2 {
@@ -145,6 +158,9 @@ class ViewController: UIViewController {
             res = "Draw"
         }
     }
+    
+    
+    
     
     func totalMoney(){
         if sum1 > sum2 {
@@ -165,10 +181,11 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
+    
     @IBAction func showAlert(){
-        let message = "Player 1 sum = \(sum1)" + "\n Player 2 sum = \(sum2)"
-        
-        
+        let message = "\n Player 1 sum = \(sum1)" + "\n\n Player 2 sum = \(sum2)"
         
         let alert = UIAlertController(title: res, message: message, preferredStyle: .alert)
         
@@ -177,6 +194,9 @@ class ViewController: UIViewController {
         alert.addAction(action)
         present(alert,animated: true,completion: nil)
     }
+    
+    
+    
     
     
     override func didReceiveMemoryWarning() {
