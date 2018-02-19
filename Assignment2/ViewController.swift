@@ -42,13 +42,14 @@ class ViewController: UIViewController {
     
     
     @IBAction func RollBtn(_ sender: UIButton) {
+        // Function for Roll Dice button
+        
         let diceOne = Int(arc4random_uniform(6)) + 1
         let diceTwo = Int(arc4random_uniform(6)) + 1
         let diceOne1 = Int(arc4random_uniform(6)) + 1
         let diceTwo1 = Int(arc4random_uniform(6)) + 1
         
-        if (totMoney1 & totMoney2) > 0 {
-            
+        if (((totMoney1 & totMoney2) > 0) && (Int(stepper2.value) <= totMoney2) && (Int(stepper1.value) <= totMoney1)) {
         round += 1
         roundBtn.text = "Round : \(round)"
         
@@ -63,6 +64,27 @@ class ViewController: UIViewController {
         result()
         totalMoney()
         }
+            
+        else if ((Int(stepper1.value) > totMoney1)){
+            let alert = UIAlertController(title: "STOP", message: "Player 1 - Please Bet an amount less than the total money left.", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            present(alert,animated: true,completion: nil)
+            
+        }
+            
+        else if ((Int(stepper2.value) > totMoney2)){
+            let alert = UIAlertController(title: "STOP", message: "Player 2 - Please Bet an amount less than the total money left.", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            present(alert,animated: true,completion: nil)
+            
+        }
+    
         else{
             if totMoney1 == 0 {
                 zero = "Player 2 Wins the Dice Game" + "\nPlayer 1 has Insufficient Funds" + "\nPlease Restart the Game"
@@ -82,7 +104,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func resetBtn(_ sender: UIButton) {
-        
+        //Function to Reset Button
         let alert = UIAlertController(title: "RESET", message: "Are You Sure You Want to Reset the game? All Game data will be lost!" , preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
@@ -94,6 +116,7 @@ class ViewController: UIViewController {
     }
     
     func reset(){
+        // Reset Updation function
         round = 0
         roundBtn.text = "Round : \(round)"
         LeftImage.image = #imageLiteral(resourceName: "blankdice")
@@ -113,6 +136,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func betInc1(_ sender: UIStepper) {
+        //Stepper for Player 1
         if (Int(stepper1.value) < totMoney1) {
         bet1.text = "BET : \(Int(stepper1.value))"
         }
@@ -130,6 +154,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func betInc2(_ sender: UIStepper) {
+        //Stepper for Player 2
         if (Int(stepper2.value) < totMoney2) {
             bet2.text = "BET : \(Int(stepper2.value))"
         }
@@ -147,7 +172,7 @@ class ViewController: UIViewController {
     
     
     func result(){
-        
+        // Function to determine winner
         if sum1 > sum2 {
             res = "Player 1 Wins"
         }
@@ -163,6 +188,7 @@ class ViewController: UIViewController {
     
     
     func totalMoney(){
+        //Function to Calculate the total Money with players
         if sum1 > sum2 {
             totMoney1 += Int(stepper1.value)
             totMoney2 -= Int(stepper2.value)

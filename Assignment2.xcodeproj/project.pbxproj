@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BAAF8E942036853000A78D1B /* Assignment2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAAF8E942036853000A78D1B /* Dice Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dice Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAAF8E972036853000A78D1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAAF8E992036853000A78D1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BAAF8E9C2036853000A78D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		BAAF8E952036853000A78D1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAAF8E942036853000A78D1B /* Assignment2.app */,
+				BAAF8E942036853000A78D1B /* Dice Game.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			);
 			name = Assignment2;
 			productName = Assignment2;
-			productReference = BAAF8E942036853000A78D1B /* Assignment2.app */;
+			productReference = BAAF8E942036853000A78D1B /* Dice Game.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -286,7 +286,7 @@
 				INFOPLIST_FILE = Assignment2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Akshay.Assignment2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dice Game";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,7 +300,7 @@
 				INFOPLIST_FILE = Assignment2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Akshay.Assignment2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dice Game";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
