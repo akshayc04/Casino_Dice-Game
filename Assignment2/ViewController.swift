@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         else if ((Int(stepper1.value) > totMoney1)){
             let alert = UIAlertController(title: "STOP", message: "Player 1 - Please Bet an amount less than the total money left.", preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            let action = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
             
             alert.addAction(action)
             present(alert,animated: true,completion: nil)
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         else if ((Int(stepper2.value) > totMoney2)){
             let alert = UIAlertController(title: "STOP", message: "Player 2 - Please Bet an amount less than the total money left.", preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            let action = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
             
             alert.addAction(action)
             present(alert,animated: true,completion: nil)
@@ -87,10 +87,10 @@ class ViewController: UIViewController {
     
         else{
             if totMoney1 == 0 {
-                zero = "Player 2 Wins the Dice Game" + "\nPlayer 1 has Insufficient Funds" + "\nPlease Restart the Game"
+                zero = "Player 2 Wins the Dice Game" + "\nPlayer 1 has Insufficient Funds" + "\n\nPlease Restart the Game"
             }
             else{
-                zero = "Player 1 Wins the Dice Game" + "\nPlayer 2 has Insufficient Funds" + "\nPlease Restart the Game"
+                zero = "Player 1 Wins the Dice Game" + "\nPlayer 2 has Insufficient Funds" + "\n\nPlease Restart the Game"
             }
             
             let alert = UIAlertController(title: "STOP", message: zero, preferredStyle: .alert)
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         //Function to Reset Button
         let alert = UIAlertController(title: "RESET", message: "Are You Sure You Want to Reset the game? All Game data will be lost!" , preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
+        alert.addAction(UIAlertAction(title: "Ok", style: .destructive , handler: { (action) -> Void in
             self.reset()}))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
