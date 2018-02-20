@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         else if ((Int(stepper1.value) > totMoney1)){
             let alert = UIAlertController(title: "STOP", message: "Player 1 - Please Bet an amount less than the total money left.", preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
             
             alert.addAction(action)
             present(alert,animated: true,completion: nil)
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         else if ((Int(stepper2.value) > totMoney2)){
             let alert = UIAlertController(title: "STOP", message: "Player 2 - Please Bet an amount less than the total money left.", preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Ok", style: .destructive, handler: nil)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
             
             alert.addAction(action)
             present(alert,animated: true,completion: nil)
@@ -131,6 +131,7 @@ class ViewController: UIViewController {
         totMoney2 = 100
         mLeft1.text = "MONEY LEFT: \(totMoney1)"
         mLeft2.text = "MONEY LEFT: \(totMoney2)"
+        return
     }
     
     
