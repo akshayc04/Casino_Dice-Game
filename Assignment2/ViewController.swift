@@ -107,12 +107,10 @@ class ViewController: UIViewController {
         //Function to Reset Button
         let alert = UIAlertController(title: "RESET", message: "Are You Sure You Want to Reset the game? All Game data will be lost!" , preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .destructive , handler: { (action) -> Void in
-            self.reset()}))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default , handler: {action in self.reset()}))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        self.present(alert,animated: true,completion: nil)
-        
+        present(alert,animated: true,completion: nil)
     }
     
     func reset(){
@@ -131,7 +129,6 @@ class ViewController: UIViewController {
         totMoney2 = 100
         mLeft1.text = "MONEY LEFT: \(totMoney1)"
         mLeft2.text = "MONEY LEFT: \(totMoney2)"
-        return
     }
     
     
